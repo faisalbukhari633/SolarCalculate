@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "118331667605",
+    "project_id": "solarcalculate-c05dc",
+    "storage_bucket": "solarcalculate-c05dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:118331667605:android:3f88ef4e93e53e78e5579c",
+        "android_client_info": {
+          "package_name": "com.solarcalculate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "118331667605-mi6qir9tsagibtd0grskr4qd9ri08kf1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.solarcalculate",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "118331667605-lvsoickp59vmth44gpbg02u9ofo4ohcn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcscQwfo3mIgK6DVjQcOEkF-f9kwxhPyo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "118331667605-lvsoickp59vmth44gpbg02u9ofo4ohcn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
