@@ -8,20 +8,25 @@ import {
 import React, {useState} from 'react';
 import { useNavigation } from '@react-navigation/native';
 import AntDesign from 'react-native-vector-icons/dist/AntDesign';
+import auth from '@react-native-firebase/auth';
 
 const Forget = () => {
     const navigation = useNavigation()
   const [email, setEmail] = useState('');
+  const [message,setMessage] = useState("")
 
   const [invalid,setInvalid]=useState("");
+
   const handleForget = async () => {
-    try {
-      if (email) {
+    if (email) {
+      try {
         await auth().sendPasswordResetEmail(email);
-        navigation.goBack();
+        setMessage('Password reset email sent! Please check your inbox.');
+      } catch (error) {
+        setMessage(error.message);
       }
-    } catch (error) {
-      setInvalid(error.message.replace(error.message,"Please enter your valid email address."));
+    } else {
+      setMessage('Please enter your email address.');
     }
   };
   return (
