@@ -1,41 +1,18 @@
-import {
-  Button,
-  Image,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {useNavigation, StackActions} from '@react-navigation/native';
-import Entypo from 'react-native-vector-icons/dist/Entypo';
-import auth from '@react-native-firebase/auth';
+import {useNavigation} from '@react-navigation/native';
 
 const Welcome = () => {
   const navigation = useNavigation();
-
-  // const logout = async () => {
-  //   try {
-  //     await auth().signOut();
-  //     navigation.dispatch(StackActions.replace('Look'));
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
   return (
-    <ImageBackground
-      source={require('../assets//solo.jpg')}
-      style={styles.img}>
+    <ImageBackground source={require('../assets//solo.jpg')} style={styles.img}>
       <View style={styles.header}>
-        {/* <Entypo name="menu" size={40} style={styles.icon} /> */}
-      <Text style={styles.wel}>Welcome</Text>
-              
+        <Text style={styles.wel}>Welcome</Text>
         <Image
           source={require('../assets/images/logo.png')}
           style={styles.immg}
         />
       </View>
-
       <View style={styles.view}>
         <View style={styles.lore}>
           <Text style={styles.load} onPress={() => navigation.navigate('Home')}>
@@ -60,7 +37,6 @@ const Welcome = () => {
           </Text>
         </View>
       </View>
-      {/* <Button title="logout" onPress={logout} /> */}
     </ImageBackground>
   );
 };
@@ -72,8 +48,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    // backgroundColor:"#fff",
-    
   },
   icon: {
     color: 'black',
@@ -83,8 +57,6 @@ const styles = StyleSheet.create({
   view: {
     alignItems: 'center',
     marginTop: 100,
-
-    // justifyContent:"space-between"
   },
   load: {
     fontSize: 10,
@@ -92,7 +64,6 @@ const styles = StyleSheet.create({
     height: 160,
     borderRadius: 5,
     textAlign: 'center',
-    // marginTop: 40,
     color: '#fff',
     textTransform: 'uppercase',
     fontSize: 12,
@@ -103,12 +74,8 @@ const styles = StyleSheet.create({
   },
   rec: {
     fontSize: 20,
-    // width: 300,
-    // height: 80,
     borderRadius: 5,
     textAlign: 'center',
-    // paddingTop: 25,
-    // marginTop: 40,
     borderWidth: 1,
     color: '#000',
   },
@@ -116,12 +83,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     borderWidth: 1,
     borderColor: '#000',
-    // width: 250,
-    // height: 250,
     borderRadius: 5,
     textAlign: 'center',
-    // paddingTop: 25,
-    // marginTop: 40,
     color: 'black',
   },
   img: {
@@ -140,14 +103,14 @@ const styles = StyleSheet.create({
     marginRight: 5,
     marginTop: 40,
   },
-  wel:{
-    textAlign:"center",
-    fontSize:30,
-    color:"#FF7F3E",
-    fontWeight:"600",
-    elevation:1,
+  wel: {
+    textAlign: 'center',
+    fontSize: 30,
+    color: '#FF7F3E',
+    fontWeight: '600',
+    elevation: 1,
     color: 'black',
     marginTop: 50,
     marginLeft: 10,
-  }
+  },
 });

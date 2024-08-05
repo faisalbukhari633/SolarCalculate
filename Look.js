@@ -14,9 +14,6 @@ const Look = () => {
       <Text style={styles.com}>Welcome</Text>
       <Image source={require('./assets/solar.png')} style={styles.img} />
       </View>
-      {/* <View style={styles.logoo}>
-        <Text style={styles.logo}>Logo</Text>
-      </View> */}
       <TouchableOpacity
         style={[styles.log,{width:deviceWidth > 360 ? deviceWidth-300 : deviceWidth-50}]}
         onPress={() => navigation.navigate('Login')}>

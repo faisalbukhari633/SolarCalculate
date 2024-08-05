@@ -1,18 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import {View, Text} from 'react-native';
 import auth from '@react-native-firebase/auth';
-import { StackActions, useNavigation } from '@react-navigation/native';
+import {StackActions, useNavigation} from '@react-navigation/native';
 
 function Splash() {
-  const navigation=useNavigation();
-  // Set an initializing state whilst Firebase connects
+  const navigation = useNavigation();
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
 
-  // Handle user state changes
   function onAuthStateChanged(user) {
-    console.log("Splash===>",user);
-    const go=user!==null ? "Drawer" : "Look";
+    console.log('Splash===>', user);
+    const go = user && user.emailVerified ? 'Welcome' : 'Look';
     navigation.dispatch(StackActions.replace(go));
     setUser(user);
     if (initializing) setInitializing(false);
@@ -23,7 +21,7 @@ function Splash() {
     return subscriber; // unsubscribe on unmount
   }, []);
 
-   if (initializing) return null;
+  if (initializing) return null;
 
   if (!user) {
     return (
@@ -33,11 +31,10 @@ function Splash() {
     );
   }
   return (
-    <View style={{flex:1,justifyContent:"center",alignItems:"center"}}>
+    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
       <Text>Welcome</Text>
     </View>
   );
 }
 
 export default Splash;
-
